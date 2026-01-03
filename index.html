@@ -437,48 +437,151 @@
 
         /* Results Screen */
         .results-screen .content {
-            gap: 8px;
+            gap: 6px;
+            justify-content: flex-start;
+            padding-top: 10px;
         }
 
-        .results-title {
-            font-size: clamp(1rem, 4vw, 1.2rem);
-            color: rgba(255,255,255,0.6);
+        .ranking-badge {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #1a1a2e;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: clamp(0.8rem, 3vw, 0.9rem);
             margin-bottom: 5px;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
         }
 
         .iq-score {
-            font-size: clamp(3.5rem, 15vw, 5rem);
+            font-size: clamp(4rem, 18vw, 5.5rem);
             font-weight: 900;
             background: linear-gradient(135deg, var(--lime), var(--purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            line-height: 1.1;
+            line-height: 1;
         }
 
         .iq-label {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: rgba(255,255,255,0.4);
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
 
-        .iq-comparison {
-            font-size: clamp(0.85rem, 3.5vw, 0.95rem);
-            color: var(--purple);
-            padding: 12px 18px;
-            background: rgba(179, 161, 255, 0.1);
-            border-radius: 14px;
-            border: 1px solid rgba(179, 161, 255, 0.25);
+        .genius-comparison {
+            font-size: clamp(0.8rem, 3vw, 0.9rem);
+            color: var(--lime);
+            padding: 10px 15px;
+            background: rgba(177, 250, 99, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(177, 250, 99, 0.2);
             line-height: 1.4;
             width: 100%;
         }
 
-        .iq-comparison.zero-iq {
-            color: #ff6b6b;
-            background: rgba(255, 107, 107, 0.1);
-            border-color: rgba(255, 107, 107, 0.25);
+        .genius-comparison .genius-names {
+            color: white;
+            font-weight: 700;
+        }
+
+        /* Share Card */
+        .share-card {
+            width: 100%;
+            background: linear-gradient(145deg, #1f1f35, #15152a);
+            border-radius: 16px;
+            padding: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin: 8px 0;
+        }
+
+        .share-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .share-card-logo {
+            font-size: 1.2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--lime), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .share-card-badge {
+            font-size: 0.7rem;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #1a1a2e;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+
+        .share-card-scores {
+            display: flex;
+            justify-content: space-around;
+            gap: 8px;
+        }
+
+        .share-card-score-item {
+            text-align: center;
+            flex: 1;
+            padding: 8px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+        }
+
+        .share-card-score-value {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--lime);
+        }
+
+        .share-card-score-label {
+            font-size: 0.65rem;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+        }
+
+        .share-card-iq {
+            text-align: center;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .share-card-iq-value {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--lime), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .share-card-iq-label {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .cta-message {
+            font-size: clamp(0.75rem, 2.8vw, 0.85rem);
+            color: rgba(255,255,255,0.7);
+            padding: 10px 15px;
+            background: rgba(179, 161, 255, 0.1);
+            border-radius: 12px;
+            border: 1px dashed rgba(179, 161, 255, 0.3);
+            line-height: 1.4;
+            width: 100%;
+        }
+
+        .cta-message strong {
+            color: var(--purple);
         }
 
         .btn-share {
@@ -507,52 +610,33 @@
             height: 18px;
         }
 
-        .game-breakdown {
-            background: linear-gradient(145deg, var(--dark), #1f1f35);
-            border-radius: 16px;
-            padding: 12px 18px;
-            width: 100%;
-            border: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .breakdown-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .breakdown-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .breakdown-label {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
-        }
-
-        .breakdown-value {
-            font-weight: 800;
-            color: var(--lime);
-            font-size: 1rem;
-        }
-
         .results-buttons {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
             width: 100%;
         }
 
         .results-buttons .btn-primary {
             width: 100%;
-            padding: 14px 30px;
-            font-size: 0.95rem;
+            padding: 12px 30px;
+            font-size: 0.9rem;
         }
 
         .results-buttons .btn-secondary {
             width: 100%;
+            padding: 10px 25px;
+        }
+
+        .download-link {
+            color: var(--lime);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* Hidden canvas for image generation */
+        #shareCanvas {
+            display: none;
         }
 
         /* Hide number input arrows */
@@ -647,24 +731,43 @@
         <!-- Results Screen -->
         <div id="results-screen" class="screen results-screen">
             <div class="content">
-                <h2 class="results-title">Your Matiks IQ</h2>
+                <div class="ranking-badge" id="ranking-badge">🏆 Top 0.1% of Players</div>
                 <div class="iq-score" id="final-iq">0</div>
-                <div class="iq-label">Intelligence Quotient</div>
-                <div class="iq-comparison" id="iq-comparison"></div>
-                <div class="game-breakdown">
-                    <div class="breakdown-item">
-                        <span class="breakdown-label">Pattern Match</span>
-                        <span class="breakdown-value" id="final-pattern">0</span>
+                <div class="iq-label">Matiks IQ Score</div>
+                
+                <div class="genius-comparison" id="genius-comparison">
+                    🧠 Your IQ matches <span class="genius-names" id="genius-names">Einstein, Hawking & Tesla</span>
+                </div>
+
+                <div class="share-card" id="share-card">
+                    <div class="share-card-header">
+                        <span class="share-card-logo">matiks</span>
+                        <span class="share-card-badge" id="card-badge">Top 0.1%</span>
                     </div>
-                    <div class="breakdown-item">
-                        <span class="breakdown-label">Mind Snap</span>
-                        <span class="breakdown-value" id="final-mindsnap">0</span>
+                    <div class="share-card-scores">
+                        <div class="share-card-score-item">
+                            <div class="share-card-score-value" id="card-pattern">0</div>
+                            <div class="share-card-score-label">Pattern</div>
+                        </div>
+                        <div class="share-card-score-item">
+                            <div class="share-card-score-value" id="card-mindsnap">0</div>
+                            <div class="share-card-score-label">Memory</div>
+                        </div>
+                        <div class="share-card-score-item">
+                            <div class="share-card-score-value" id="card-math">0</div>
+                            <div class="share-card-score-label">Math</div>
+                        </div>
                     </div>
-                    <div class="breakdown-item">
-                        <span class="breakdown-label">Quick Math</span>
-                        <span class="breakdown-value" id="final-math">0</span>
+                    <div class="share-card-iq">
+                        <div class="share-card-iq-value" id="card-iq">0</div>
+                        <div class="share-card-iq-label">IQ Score</div>
                     </div>
                 </div>
+
+                <div class="cta-message">
+                    🚀 <strong>Level up your brain!</strong> Download Matiks and train daily with 100+ puzzles. <a href="https://www.matiks.in/" class="download-link" target="_blank">Get it now →</a>
+                </div>
+
                 <div class="results-buttons">
                     <button class="btn-share" onclick="shareToX()">
                         <svg class="x-icon" viewBox="0 0 24 24">
@@ -672,14 +775,13 @@
                         </svg>
                         Share on X
                     </button>
-                    <button class="btn-primary" onclick="window.open('https://www.matiks.in/', '_blank')">
-                        Play More on Matiks
-                    </button>
                     <button class="btn-secondary" onclick="resetChallenge()">Try Again</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <canvas id="shareCanvas" width="600" height="600"></canvas>
 
     <script>
         // Game State
@@ -690,8 +792,33 @@
             startTime: 0,
             totalTime: 0,
             gameStartTimes: {},
-            finalIQ: 0
+            finalIQ: 0,
+            ranking: '',
+            genius: ''
         };
+
+        // Genius comparisons based on IQ ranges
+        const geniusData = {
+            180: { name: 'Albert Einstein', percentile: '0.001%' },
+            170: { name: 'Stephen Hawking', percentile: '0.01%' },
+            160: { name: 'Nikola Tesla', percentile: '0.1%' },
+            150: { name: 'Elon Musk', percentile: '0.5%' },
+            140: { name: 'Steve Jobs', percentile: '1%' },
+            130: { name: 'Bill Gates', percentile: '2%' },
+            120: { name: 'Mark Zuckerberg', percentile: '5%' },
+            110: { name: 'Top Achievers', percentile: '10%' }
+        };
+
+        function getGeniusComparison(iq) {
+            if (iq >= 175) return geniusData[180];
+            if (iq >= 165) return geniusData[170];
+            if (iq >= 155) return geniusData[160];
+            if (iq >= 145) return geniusData[150];
+            if (iq >= 135) return geniusData[140];
+            if (iq >= 125) return geniusData[130];
+            if (iq >= 115) return geniusData[120];
+            return geniusData[110];
+        }
 
         // Utility Functions
         function showScreen(screenId) {
@@ -744,7 +871,9 @@
                 startTime: 0,
                 totalTime: 0,
                 gameStartTimes: {},
-                finalIQ: 0
+                finalIQ: 0,
+                ranking: '',
+                genius: ''
             };
             showScreen('landing-screen');
         }
@@ -1027,27 +1156,22 @@
         }
 
         // ===== RESULTS =====
-        function getIQComparison(iq) {
-            if (iq === 0) return { text: "Time to build your IQ on Matiks! 🎯", isZero: true };
-            if (iq >= 160) return { text: "🧠 Genius level! Close to Einstein & Hawking!", isZero: false };
-            if (iq >= 150) return { text: "⚡ Exceptional! Tesla & Musk territory!", isZero: false };
-            if (iq >= 140) return { text: "🌟 Brilliant! Top 2% of population!", isZero: false };
-            if (iq >= 130) return { text: "🔬 Very gifted! Like Richard Feynman!", isZero: false };
-            if (iq >= 120) return { text: "📚 Superior intelligence! Keep going!", isZero: false };
-            if (iq >= 110) return { text: "✨ Above average! Great potential!", isZero: false };
-            return { text: "🎯 Keep practicing on Matiks!", isZero: false };
-        }
-
         function calculateIQ() {
             const totalScore = gameState.scores.pattern + gameState.scores.mindsnap + gameState.scores.math;
             if (totalScore === 0) return 0;
             
             gameState.totalTime = (Date.now() - gameState.startTime) / 1000;
-            const scoreComponent = Math.min(totalScore * 4, 45);
+            
+            // Boosted IQ calculation (+10 across the board)
+            const scoreComponent = Math.min(totalScore * 5, 50); // Increased multiplier
             const maxTime = 30;
-            const timeBonus = Math.max(0, (maxTime - gameState.totalTime) * 0.67);
-            let iq = 100 + scoreComponent + timeBonus;
-            return Math.max(100, Math.min(165, Math.round(iq)));
+            const timeBonus = Math.max(0, (maxTime - gameState.totalTime) * 0.8);
+            
+            // Base IQ now starts at 110 instead of 100
+            let iq = 110 + scoreComponent + timeBonus;
+            
+            // Clamp to 115-180 range (boosted range)
+            return Math.max(115, Math.min(180, Math.round(iq)));
         }
 
         function showResults() {
@@ -1056,14 +1180,27 @@
             
             showScreen('results-screen');
             
-            const iq = calculateIQ();
+            const totalScore = gameState.scores.pattern + gameState.scores.mindsnap + gameState.scores.math;
+            let iq = totalScore === 0 ? 0 : calculateIQ();
             gameState.finalIQ = iq;
             
+            // Get genius comparison
+            const comparison = iq > 0 ? getGeniusComparison(iq) : { name: '', percentile: '—' };
+            gameState.ranking = comparison.percentile;
+            gameState.genius = comparison.name;
+            
+            // Update UI
             const iqElement = document.getElementById('final-iq');
+            const rankingBadge = document.getElementById('ranking-badge');
+            const geniusComparison = document.getElementById('genius-comparison');
+            const geniusNames = document.getElementById('genius-names');
             
             if (iq === 0) {
                 iqElement.textContent = '0';
+                rankingBadge.textContent = '🎯 Time to Train!';
+                geniusComparison.innerHTML = '🚀 Start your brain training journey with <a href="https://www.matiks.in/" class="download-link" target="_blank">Matiks</a>!';
             } else {
+                // Animate IQ
                 let currentIQ = 0;
                 const increment = iq / 40;
                 const iqInterval = setInterval(() => {
@@ -1074,23 +1211,109 @@
                     }
                     iqElement.textContent = Math.round(currentIQ);
                 }, 30);
+                
+                rankingBadge.textContent = `🏆 Top ${comparison.percentile} of Players`;
+                geniusNames.textContent = comparison.name;
             }
             
-            const comparison = getIQComparison(iq);
-            const comparisonElement = document.getElementById('iq-comparison');
-            comparisonElement.textContent = comparison.text;
-            comparisonElement.classList.toggle('zero-iq', comparison.isZero);
+            // Update share card
+            document.getElementById('card-pattern').textContent = gameState.scores.pattern;
+            document.getElementById('card-mindsnap').textContent = gameState.scores.mindsnap;
+            document.getElementById('card-math').textContent = gameState.scores.math;
+            document.getElementById('card-iq').textContent = iq;
+            document.getElementById('card-badge').textContent = iq > 0 ? `Top ${comparison.percentile}` : 'Beginner';
+        }
+
+        // Generate share card image
+        function generateShareImage() {
+            const canvas = document.getElementById('shareCanvas');
+            const ctx = canvas.getContext('2d');
             
-            document.getElementById('final-pattern').textContent = gameState.scores.pattern;
-            document.getElementById('final-mindsnap').textContent = gameState.scores.mindsnap;
-            document.getElementById('final-math').textContent = gameState.scores.math;
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, 600, 600);
+            gradient.addColorStop(0, '#0f0f1a');
+            gradient.addColorStop(1, '#1a1a2e');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 600, 600);
+            
+            // Border
+            ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(20, 20, 560, 560);
+            
+            // Logo
+            ctx.font = 'bold 48px Segoe UI';
+            const logoGradient = ctx.createLinearGradient(200, 60, 400, 60);
+            logoGradient.addColorStop(0, '#B1FA63');
+            logoGradient.addColorStop(1, '#B3A1FF');
+            ctx.fillStyle = logoGradient;
+            ctx.textAlign = 'center';
+            ctx.fillText('matiks', 300, 80);
+            
+            // Ranking badge
+            ctx.fillStyle = '#FFD700';
+            ctx.font = 'bold 20px Segoe UI';
+            ctx.fillText(`🏆 Top ${gameState.ranking} of Players`, 300, 130);
+            
+            // IQ Score
+            ctx.font = 'bold 120px Segoe UI';
+            const iqGradient = ctx.createLinearGradient(150, 200, 450, 320);
+            iqGradient.addColorStop(0, '#B1FA63');
+            iqGradient.addColorStop(1, '#B3A1FF');
+            ctx.fillStyle = iqGradient;
+            ctx.fillText(gameState.finalIQ.toString(), 300, 280);
+            
+            // IQ Label
+            ctx.fillStyle = 'rgba(255,255,255,0.5)';
+            ctx.font = '18px Segoe UI';
+            ctx.fillText('MATIKS IQ SCORE', 300, 320);
+            
+            // Genius comparison
+            ctx.fillStyle = '#B1FA63';
+            ctx.font = 'bold 22px Segoe UI';
+            ctx.fillText(`Similar to: ${gameState.genius}`, 300, 380);
+            
+            // Score boxes
+            const scores = [
+                { label: 'Pattern', value: gameState.scores.pattern },
+                { label: 'Memory', value: gameState.scores.mindsnap },
+                { label: 'Math', value: gameState.scores.math }
+            ];
+            
+            ctx.fillStyle = 'rgba(255,255,255,0.05)';
+            ctx.fillRect(50, 420, 160, 80);
+            ctx.fillRect(220, 420, 160, 80);
+            ctx.fillRect(390, 420, 160, 80);
+            
+            scores.forEach((score, i) => {
+                const x = 130 + (i * 170);
+                ctx.fillStyle = '#B1FA63';
+                ctx.font = 'bold 36px Segoe UI';
+                ctx.fillText(score.value.toString(), x, 465);
+                ctx.fillStyle = 'rgba(255,255,255,0.5)';
+                ctx.font = '14px Segoe UI';
+                ctx.fillText(score.label, x, 490);
+            });
+            
+            // CTA
+            ctx.fillStyle = 'rgba(255,255,255,0.7)';
+            ctx.font = '18px Segoe UI';
+            ctx.fillText('Can you beat my score? Take the challenge! 👇', 300, 560);
+            
+            return canvas.toDataURL('image/png');
         }
 
         function shareToX() {
             const iq = gameState.finalIQ || 0;
-            let text = iq === 0 
-                ? `I just took the Matiks IQ Challenge and got... 0 😅\n\nTime to train my brain! What's YOUR IQ score?\n\n🧠 Take the test:`
-                : `🧠 I just took the Matiks IQ Challenge!\n\nMy IQ Score: ${iq}\n\nWhat's YOUR IQ score? Take the 30-second challenge:`;
+            const ranking = gameState.ranking || '—';
+            const genius = gameState.genius || '';
+            
+            let text;
+            if (iq === 0) {
+                text = `I just took the Matiks IQ Challenge! 🧠\n\nTime to train my brain! 💪\n\nThink you can beat me? Take the 30-second challenge:`;
+            } else {
+                text = `🏆 I'm in the Top ${ranking} of players!\n\n🧠 My Matiks IQ: ${iq}\n✨ Similar to: ${genius}\n\nThink you're smarter? Prove it! Take the 30-second challenge:`;
+            }
             
             const url = 'https://www.matiks.in/';
             window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
